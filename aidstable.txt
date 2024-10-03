@@ -1,0 +1,112 @@
+Alter table department_1
+modify dept_name varchar2(20);
+
+modify dept_name varchar2(20);
+
+Insert ALL
+ INTO department2 (department_id, department_name) VALUES (1, 'sales')
+ INTO department2 (department_id, first_name) VALUES (2, 'research')
+ INTO department2 (department_id, first_name) VALUES (3, 'Engineering')
+ INTO department2 (department_id, first_name) values (4, 'accounts')
+ INTO department2 (department_id, first_name) values (5, 'hr')
+select * from dual;
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    department_id INT,
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
+);
+CREATE TABLE department2 (
+    department_id INT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    employee_id INT,
+    FOREIGN KEY (department_id) REFERENCES department2(department_id)
+);
+
+ create table aids(sid number(10),sname char(20),address char(10));
+
+Table created.
+
+SQL> desc aids
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SID                                                NUMBER(10)
+ SNAME                                              CHAR(20)
+ ADDRESS                                            CHAR(10)
+
+SQL> desc aids
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SID                                                NUMBER(10)
+ SNAME                                              CHAR(20)
+ ADDRESS                                            CHAR(10)
+ MOBILE                                             NUMBER(10)
+ GENDER                                             CHAR(6)
+
+SQL> insert into aids values(1,'raju','hyd',1234567891,'male');
+
+1 row created.
+
+SQL> insert into aids values(2,'nitya','hyd',0987654321,'female');
+
+1 row created.
+
+SQL> insert into aids values(3,'durgam','hyd',5432167890,'male');
+
+1 row created.
+
+SQL> select * from aids;
+
+       SID SNAME                ADDRESS        MOBILE GENDER
+---------- -------------------- ---------- ---------- ------
+         1 raju                 hyd        1234567891 male
+         2 nitya                hyd         987654321 female
+         3 durgam               hyd        5432167890 male
+ alter table aids add(sec char(5));
+
+Table altered.
+
+SQL> desc aids
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SID                                                NUMBER(10)
+ SNAME                                              CHAR(20)
+ ADDRESS                                            CHAR(10)
+ MOBILE                                             NUMBER(10)
+ GENDER                                             CHAR(6)
+ SEC                                                CHAR(5)
+
+SQL> select * from aids;
+
+       SID SNAME                ADDRESS        MOBILE GENDER SEC
+---------- -------------------- ---------- ---------- ------ -----
+         1 raju                 hyd        1234567891 male
+         2 nitya                hyd         987654321 female
+         3 durgam               hyd        5432167890 male
+
+SQL> update aids set sec = 'A';
+
+3 rows updated.
+
+SQL> select * from aids;
+
+       SID SNAME                ADDRESS        MOBILE GENDER SEC
+---------- -------------------- ---------- ---------- ------ -----
+         1 raju                 hyd        1234567891 male   A
+         2 nitya                hyd         987654321 female A
+         3 durgam               hyd        5432167890 male   A
+
+SQL> alter table aids drop column sec;
+
+Table altered.
+
+SQL> select * from aids;
+
+       SID SNAME                ADDRESS        MOBILE GENDER
+---------- -------------------- ---------- ---------- ------
+         1 raju                 hyd        1234567891 male
+         2 nitya                hyd         987654321 female
+         3 durgam               hyd        5432167890 male
