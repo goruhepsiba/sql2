@@ -1,50 +1,94 @@
-create table employees_1(
-emp_id int primary key,
-empname varchar(20),
-dept_id int,
-salary decimal(10,2),
-join_date DATE
-);
+Create table student  
+Syntax  
+Create table student (     
+    Std_id int primary key,     
+    Firstname varchar(20),     
+    Lastname varchar(20),     
+    Dob date,     
+    Email varchar(100),     
+    Dept_id int     
+) 
+Insert the values in table  
+1.INSERT  INTO student(std_id, firstname,lastname,dob,email,dept_id)    
+VALUES(1,’jamal’,’rohan’,TO_DATE(‘2005-06-03’,’YY-MM-DD’),’rohan@gmail.com’,1) 
+ 
+2.INSERT  INTO student(std_id, firstname,lastname,dob,email,dept_id)    
+VALUES(2,’surya’,’singh’,TO_DATE(‘2005-09-08’,’YY-MM-DD’),’surya@gmail.com’,2) 
+ 
+3.INSERT INTO student (std_id,firstname,lastname,dob,email,dept_id)    
+VALUES(3,’raj’,’kumar’,TO_DATE(‘2006-08-03’,’YY-MM-DD’),’raj@gmail.com’,1) 
+ 
+4.INSERT  INTO student(std_id, firstname,lastname,dob,email,dept_id)    
+VALUES(4,’jamal’,’rohan’,TO_DATE(‘2005-06-03’,’YY-MM-DD’),’rohan@gmail.com’,1) 
+ 
+5.INSERT INTO student (std_id,firstname,lastname,dob,email,dept_id)    
+VALUES(5,’komal’,’yadav’,TO_DATE(‘2004-03-01’,’YY-MM-DD’),’komal@gmail.com’,1) 
 
-create table departmentt(
-dept_id int primary key,
-dept_name varchar(20)
-);
-create table projectts(
-proj_id int primary key,
-proj_name varchar(20),
-budget decimal(15,2)
-);
-CREATE TABLE Employees_Projects (
-    emp_id INT NOT NULL,        -- Employee ID (assumed to be an integer)
-    proj_id INT NOT NULL,       -- Project ID (assumed to be an integer)
-    assigned_date DATE,        -- Date when the employee was assigned to the project
-    role VARCHAR(30),         -- Role of the employee in the project (can store up to 100 characters)
-    PRIMARY KEY (emp_id, proj_id),  -- Composite primary key (unique combination of empid and projid)
-    FOREIGN KEY (emp_id) REFERENCES Employees_1(emp_id),  -- reference to the 'employees_1' table
-    FOREIGN KEY (proj_id) REFERENCES Projectts(proj_id)  -- reference to the 'projectts' table
-);
-INSERT ALL
-INTO departmentt(dept_id, dept_name) VALUES(1, 'IT')
-INTO departmentt(dept_id, dept_name) VALUES(2, 'HR')
-INTO departmentt(dept_id, dept_name) VALUES(3, 'FINANCE')
-INTO departmentt(dept_id, dept_name) VALUES(4, 'MARKETING')
-SELECT * FROM DUAL;
+View the table 
 
-INSERT ALL
-INTO PROJECTTS(PROJ_ID, PROJ_NAME, BUDGET) VALUES(1, 'WEBSITE', 2000)
-INTO PROJECTTS(PROJ_ID, PROJ_NAME, BUDGET) VALUES(2, 'MOBILEAPP', 5000)
-INTO PROJECTTS(PROJ_ID, PROJ_NAME, BUDGET) VALUES(3, 'DATA MIGRATION', 3000)
-INTO PROJECTTS(PROJ_ID, PROJ_NAME, BUDGET) VALUES(4, 'AI', 4000)
-INTO PROJECTTS(PROJ_ID, PROJ_NAME, BUDGET) VALUES(5, 'MARKETING', 1500)
-SELECT * FROM DUAL;
-INSERT ALL
-INTO EmployeeS_Projects (emp_id, proj_id, assigned_date, role) VALUES (1, 11, '2024-11-21', 'Developer')
-INTO EmployeeS_Projects (emp_id, proj_id, assigned_date, role) VALUES (2, 22, '2024-11-23', 'PROJECT MANAGER')
-INTO EmployeeS_Projects (emp_id, proj_id, assigned_date, role) VALUES (3, 33, '2024-11-24', 'ANALYST')
-INTO EmployeeS_Projects (emp_id, proj_id, assigned_date, role) VALUES (4, 44, '2024-11-25', 'ACCOUNTANT')
-INTO EmployeeS_Projects (emp_id, proj_id, assigned_date, role) VALUES (5, 55, '2024-11-26', 'HR')
-INTO EmployeeS_Projects (emp_id, proj_id, assigned_date, role) VALUES (6, 66, '2024-11-27', 'FINANCE')
-INTO EmployeeS_Projects (emp_id, proj_id, assigned_date, role) VALUES (7, 77, '2024-11-28', 'MARKET LEAGE')
-INTO EmployeeS_Projects (emp_id, proj_id, assigned_date, role) VALUES (8, 88, '2024-11-29', 'DATA SCIENTIST')
-SELECT * FROM DUAL;
+Select*from student 
+STD_ID FIRSTNAME LASTNAME DOB EMAIL DEPT_ID 
+1 jamal rohan 03-JUN-05 rohan@gmail.com 1 
+2 surya singh 08-SEP-05 surya@gmail.com 2 
+3 raj kumar 03-AUG-06 raj@gmail.com 1 
+4 jamal rohan 03-JUN-05 rohan@gmail.com 1 
+5 komal yadav 01-MAR-04 komal@gmail.com 1 
+ 
+Create table faculty  
+Syntax  
+Create table faculty (      
+    Fac_id int primary key,      
+    Firstname varchar(20),      
+    Lastname varchar(20),      
+    Dob date,      
+    Email varchar(100),      
+    Dept_id int      
+) 
+
+Insert the values in table  
+1.INSERT  INTO faculty (fac_id, firstname,lastname,dob,email,dept_id)      
+VALUES(1,’kalpana’,’joshi’,TO_DATE(‘1995-11-01’,’YY-MM-DD’),’kalpana@gmail.com’,3) 
+ 
+2.INSERT  INTO faculty (fac_id, firstname,lastname,dob,email,dept_id)      
+VALUES(2,’mukesh’,’sharma’,TO_DATE(‘1996-02-10’,’YY-MM-DD’),’sharma@gmail.com’,3) 
+ 
+3.INSERT  INTO faculty (fac_id, firstname,lastname,dob,email,dept_id)      
+VALUES(3,’sony’,’vakode’,TO_DATE(‘1995-08-10’,’YY-MM-DD’),’sony@gmail.com’,4) 
+ 
+4.INSERT  INTO faculty (fac_id, firstname,lastname,dob,email,dept_id)      
+VALUES(4,’Nitin’,’vyas’,TO_DATE(‘1996-12-20’,’YY-MM-DD’),’vyas@gmail.com’,3) 
+ 
+5.INSERT  INTO faculty (fac_id, firstname,lastname,dob,email,dept_id)      
+VALUES(5,’Amit’,’mishra’,TO_DATE(‘1998-09-22’,’YY-MM-DD’),’amit@gmail.com’,1)
+ 
+View the table  
+Select*from faculty 
+FAC_ID FIRSTNAME LASTNAME DOB EMAIL DEPT_ID 
+5 Amit mishra 22-SEP-98 amit@gmail.com 1 
+1 kalpana joshi 01-NOV-95 kalpana@gmail.com 3 
+2 mukesh sharma 10-FEB-96 sharma@gmail.com 3 
+3 sony vakode 10-AUG-95 sony@gmail.com 4 
+4 Nitin vyas 20-DEC-96 vyas@gmail.com 3 
+ 
+Create table department  
+Syntax  
+Create table Department (      
+    Dept_id int primary key,      
+    Departmentname varchar(20),     
+    Department_location varchar(20)    
+) 
+Insert the values in table  
+1.INSERT  INTO Department (dept_id, departmentname, department_location)     
+VALUES(1,’computer science’,’block-A’) 
+ 
+2.INSERT  INTO Department (dept_id, departmentname, department_location)     
+VALUES(2,’mechine learning’,’block-B’) 
+ 
+3.INSERT  INTO Department (dept_id, departmentname, department_location)     
+VALUES(3,’AI’,’block-C’) 
+ 
+4.INSERT  INTO Department (dept_id, departmentname, department_location)     
+VALUES(4,’AI-DA’,’block-B’) 
+ 
+5.INSERT  INTO Department (dept_id, departmentname, department_location)     
+VALUES(5,’csm’,’block-A’) 
