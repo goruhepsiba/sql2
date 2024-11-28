@@ -1,0 +1,49 @@
+create view sales_employees AS
+select employee_id, first_name, last_name
+From employees;
+create view employee_basic_info AS
+select employee_id, first_name, last_name, department_id;
+
+create table employee_2(
+emp_id number(10),
+empname varchar(20),
+city varchar(20)
+);
+o/p: table created
+
+INSERT INTO employee_2 (emp_id, empname, city)
+VALUES (1, 'hepsiba', 'hyderabad'); 
+o/p: 1 row inserted
+
+create view employee_2_basic_info AS
+select emp_id, empname from employee_2;
+o/p: view created
+
+create or replace procedure greet_user(p_name in varchar2) AS
+begin
+    dbms_output.put_line('Hello, ' || p_name || '!');
+end;
+/
+o/p: procedure successfully completed
+
+set serveroutput on;
+begin
+greet_user('hepsi');
+end;
+/
+o/p: hello, hepsi!
+
+create or replace trigger employee_2_insert
+after insert on employee_2
+for each row
+begin 
+   DBMS_output.put_line('New employee added: ' || :New.empname || ' ' || :New.cty);
+End;
+/
+CREATE OR REPLACE TRIGGER employee_22_insert
+AFTER INSERT ON employee_22
+FOR EACH ROW
+BEGIN
+   DBMS_OUTPUT.PUT_LINE('New employee added: ' || :NEW.empname || ' ' || :NEW.cty);
+END;
+/
